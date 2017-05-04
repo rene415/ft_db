@@ -1,0 +1,49 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rramirez <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/04/28 01:09:45 by rramirez          #+#    #+#              #
+#    Updated: 2017/05/04 01:56:38 by rramirez         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	=	ft_db
+
+CC		=	gcc
+
+FLAG	=	-Wall -Wextra -Werror
+
+SRCS	= 	main.c\
+			add_user.c\
+			user_len_chk.c\
+			remove_user.c\
+			edit_user.c\
+			rot_13.c\
+
+OBJ =		${SRCS:.c=.o}
+
+INCLUDE	=	-I ft_db.h -L ./libft -lft 
+
+all: $(NAME)
+
+$(OBJ):
+	@$(CC) $(FLAG) -c $(SRCS)
+
+$(NAME): $(OBJ)
+	@make all -C libft
+	@$(CC) $(FLAG) $(INCLUDE) $(OBJ) -o $(NAME)
+
+clean:
+	@make clean -C libft
+	@/bin/rm -f $(OBJ)
+
+fclean: clean
+	@make fclean -C libft
+	@/bin/rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean
