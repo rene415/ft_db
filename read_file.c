@@ -21,17 +21,18 @@ void	print_struct(t_store *x)
 	}
 }
 
-int		read_file(FILE *fp)
+int		read_file(char *user)
 {
 	char		*line;
 	t_store		*save;
 	t_store		*head;
+	int			fd;
 
 	if (!(save = (t_store*)malloc(sizeof(t_store))))
 		return (0);
 	head = save;
 	save->next = NULL;
-	fp = open(fp, O_RDONLY);
+	fd = open(user, O_RDONLY);
 	while (get_next_line(fd, &line) == 1)
 	{
 		if (save == NULL)
@@ -44,7 +45,7 @@ int		read_file(FILE *fp)
 		free(line);
 		save = save->next;
 	}
-	close(fp);
+	close(fd);
 	return (1);
 }
 

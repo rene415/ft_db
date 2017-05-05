@@ -34,7 +34,7 @@ int 	add_user(char *user, FILE *fp)
 	{
 		ft_putstr("type your password\n");
 		scanf("%s", pass);
-		while (ft_strcmp(pass, ) != 0)
+		while (ft_strcmp(pass, "password") != 0)
 		{
 			ft_putstr("Password does not match\n");
 			ft_strclr(pass);
