@@ -14,6 +14,12 @@
 
 void	choice_chk(char *c, char *user, FILE *fp)
 {
+	while (*c != '1' && *c != '2' && *c != '3')
+	{
+		system("clear");
+		ft_putstr("Invalid Entry. Please Select One");
+		ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
+	}
 	if (*c == '1')
 	{
 		ft_putstr("Please enter your user login\n");

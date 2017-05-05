@@ -26,28 +26,6 @@ int		main(void)
 	ft_bzero(user, ft_strlen(user));
 	ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
 	scanf("%c", choice);
-	while (choice[0] != '1' && choice[0] != '2' && choice[0] != '3')
-	{
-		system("clear");
-		ft_putstr("Invalid Entry. Please Select One");
-		ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
-	}
-	if (choice[0] == '1')
-	{
-		ft_putstr("Please enter your user login\n");
-		scanf("%s", user);
-		check_user(user, fp);
-	}
-	else if (choice[0] == '2')
-		printf("there is no help.\n");
-	else if (choice[0] == '3')
-	{
-		fclose(fp);
-		system("clear");
-		printf("Session ended\n");
-	}
-	else
-		printf("Please enter a valid selection\n");
-	fclose(fp);
+	choice_chk(&choice[0], user, fp);
 	return (0);
 }
