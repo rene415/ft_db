@@ -12,7 +12,7 @@
 
 #include "ft_db.h"
 
-void	choice_chk(char *c, char *user, FILE *fp)
+int		choice_chk(char *c, char *user, FILE *fp)
 {
 	while (*c != '1' && *c != '2' && *c != '3')
 	{
@@ -33,6 +33,8 @@ void	choice_chk(char *c, char *user, FILE *fp)
 		fclose(fp);
 		system("clear");
 		printf("Session ended\n");
+		return (0);
 	}
-	fclose(fp);
+	fclose(fp);		//to be removed (not sure)
+	return (1);
 }

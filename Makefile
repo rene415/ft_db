@@ -20,10 +20,11 @@ SRCS	= 	main.c\
 			check_user.c\
 			user_len_chk.c\
 			remove_user.c\
-			edit_user.c\
 			rot_13.c\
 			read_file.c\
 			check_pass.c\
+			choice_chk.c\
+			edit_data.c\
 
 OBJ =		${SRCS:.c=.o}
 

@@ -30,16 +30,16 @@ void	add_user(char *user, FILE *fp, char *pass)
 
 void	valid_usr(char *user, char *pass)
 {
-	char	*hey;
+	char	*hiddenpsw;
 	FILE 	*usrFile;
 	
 	usrFile = fopen (user, "r");
 	printf("User Found. Please enter your password.\n");
-	get_next_line(fileno(usrFile), &hey);
-	printf("hey = %s\n", hey);
+	get_next_line(fileno(usrFile), &hiddenpsw);
+	printf("hey = %s\n", hiddenpsw);
 	ft_putstr("type your password\n");
 	scanf("%s", pass);
-	while (ft_strcmp(pass, hey) != 0)
+	while (ft_strcmp(pass, hiddenpsw) != 0)
 	{
 		ft_putstr("Password does not match\n");
 		ft_strclr(pass);
@@ -60,9 +60,7 @@ int 	check_user(char *user, FILE *fp)
 	size = ftell(fp);
 	fclose(fp);
 	if (size > 0)
-	{
 		valid_usr(user, pass);
-	}
 	else
 	{
 		remove(user);
@@ -71,10 +69,5 @@ int 	check_user(char *user, FILE *fp)
 		add_user(user, fp, pass);
 		fputs(user, fp);
 	}
-	sleep(1);
-	system("clear");
-	printf("Welcome:\n     %s\n", user);
-	ft_putstr("_________________\n");
-	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
 	return (1);
 }

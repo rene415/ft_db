@@ -26,6 +26,13 @@ int		main(void)
 	ft_bzero(user, ft_strlen(user));
 	ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
 	scanf("%c", choice);
-	choice_chk(&choice[0], user, fp);
+	if (choice_chk(&choice[0], user, fp) == 1)
+	{
+		if (edit_data(choice, fp, user) == 1)
+		{
+
+		}
+		
+	}
 	return (0);
 }
