@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   password.c                                         :+:      :+:    :+:   */
+/*   check_pass.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/05 00:42:01 by rramirez          #+#    #+#             */
-/*   Updated: 2017/05/05 00:42:30 by rramirez         ###   ########.fr       */
+/*   Updated: 2017/05/05 07:01:21 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int		pass_check2(char *pass, size_t i, int digitFlag, int upperFlag,
 			lowerFlag = 1;
 			i++;
 		}
+		else
+			break;
 	}
 	if_statements(digitFlag, upperFlag , lowerFlag);
  return((upperFlag == 1 && digitFlag == 1 && lowerFlag == 1) ? 1 : 0);
@@ -82,7 +84,7 @@ void	password(char *user, char *pass)
 	ft_putstr("numeric characters.\n");
 	scanf("%s", pass);
 	system("clear");
-	if(pass_check(pass) != 1)
+	if (pass_check(pass) != 1)
 		password(user, pass);
 	fputs(pass, userfile);
 	ft_putstr("User created\n");
