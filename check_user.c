@@ -30,20 +30,25 @@ void	add_user(char *user, FILE *fp, char *pass)
 int 	check_user(char *user, FILE *fp)
 {
 	char		pass[16];
-	t_store		*result;
+	//t_store		*result;
 	int			size;
+	char		*hey;
 
 	printf("at add user\n");
 	fp = fopen (user, "a+");
 	fseek(fp, 0, SEEK_END);
 	size = ftell(fp);
+	fclose(fp);
 	if (size > 0)
 	{
-		printf("start read_file of pass in FP\n");
-		result = read_file(fp, user);
+		fp = fopen (user, "r");
+		printf("User Found. Please enter your password.\n");
+//		result = read_file(fp, user);
+		get_next_line(fileno(fp), &hey);
+		printf("hey = %s\n", hey);
 		ft_putstr("type your password\n");
 		scanf("%s", pass);
-		while (ft_strcmp(pass, result->str) != 0)
+		while (ft_strcmp(pass, hey) != 0)
 		{
 			ft_putstr("Password does not match\n");
 			ft_strclr(pass);
