@@ -25,6 +25,7 @@ void	add_user(char *user, FILE *fp, char *pass)
 	}
 	fclose(fp);
 	password(user, pass);
+	ft_putstr("User created\n");
 }
 
 void	valid_usr(char *user, char *pass)

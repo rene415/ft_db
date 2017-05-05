@@ -84,9 +84,8 @@ void	password(char *user, char *pass)
 	ft_putstr("numeric characters.\n");
 	scanf("%s", pass);
 	system("clear");
-	if (pass_check(pass) != 1)
+	if (pass_check(pass) == 0)
 		password(user, pass);
 	fputs(pass, userfile);
-	ft_putstr("User created\n");
 	fclose(userfile);
 }
