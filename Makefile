@@ -6,7 +6,7 @@
 #    By: rramirez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/28 01:09:45 by rramirez          #+#    #+#              #
-#    Updated: 2017/05/04 01:56:38 by rramirez         ###   ########.fr        #
+#    Updated: 2017/05/04 17:41:53 by wfung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS	= 	main.c\
 			remove_user.c\
 			edit_user.c\
 			rot_13.c\
+			read_file.c\
 
 OBJ =		${SRCS:.c=.o}
 

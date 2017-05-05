@@ -6,7 +6,7 @@
 /*   By: rramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 03:25:34 by rramirez          #+#    #+#             */
-/*   Updated: 2017/05/04 02:00:55 by rramirez         ###   ########.fr       */
+/*   Updated: 2017/05/04 17:56:30 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 typedef	struct		s_store
 {
+	char			*str;
+	char			**array;
 	struct s_store	*next;
 }					t_store;
 

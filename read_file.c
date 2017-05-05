@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/03 20:30:36 by wfung             #+#    #+#             */
-/*   Updated: 2017/05/03 21:23:37 by wfung            ###   ########.fr       */
+/*   Updated: 2017/05/04 17:58:19 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		read_file(FILE *fp)
 		return (0);
 	head = save;
 	save->next = NULL;
-	fp = open(fp, O_RONLY);
+	fp = open(fp, O_RDONLY);
 	while (get_next_line(fd, &line) == 1)
 	{
 		if (save == NULL)
@@ -44,7 +44,7 @@ int		read_file(FILE *fp)
 		free(line);
 		save = save->next;
 	}
-	close(fd);
+	close(fp);
 	return (1);
 }
 

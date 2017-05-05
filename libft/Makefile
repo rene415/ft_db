@@ -6,7 +6,7 @@
 #    By: rramirez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/22 12:55:50 by rramirez          #+#    #+#              #
-#    Updated: 2017/05/04 01:45:51 by rramirez         ###   ########.fr        #
+#    Updated: 2017/05/04 17:45:56 by wfung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,12 @@ SRC = ./ft_atoi.c ./ft_bzero.c ./ft_isalnum.c ./ft_isascii.c ./ft_isdigit.c\
 	./ft_strjoin.c ./ft_strlcat.c ./ft_strlen.c ./ft_strmap.c ./ft_strncat.c\
    	./ft_strncmp.c ./ft_strncpy.c ./ft_strnequ.c ./ft_strnew.c ./ft_strnstr.c\
    	./ft_strrchr.c ./ft_strsplit.c ./ft_strstr.c ./ft_strsub.c ./ft_strtrim.c\
-   	./ft_tolower.c ./ft_toupper.c ./ft_word_count.c ./ft_spaces.c ./ft_int_len.c ./ft_letters.c
+   	./ft_tolower.c ./ft_toupper.c ./ft_word_count.c ./ft_spaces.c ./ft_int_len.c\
+	./ft_letters.c ./get_next_line.c
 
 OS = $(SRC:.c=.o) 
 
-INCLD = libft.h
+INCLD = libft.h get_next_line.h
 
 all: $(NAME)
 
