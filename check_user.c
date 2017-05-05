@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_user.c                                         :+:      :+:    :+:   */
+/*   check_user.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,30 +12,35 @@
 
 #include "ft_db.h"
 
-void	password(char *user, char *pass)
+void	add_user(char *user, FILE *fp, char *pass)
 {
-	FILE *userfile;
-
-	userfile = fopen(user, "w+");
-	ft_putstr("type a password\n");
-	scanf("%s", pass);
-	system("clear");
-	fputs(pass, userfile);
-	ft_putstr("User created\n");
-	fclose(userfile);
-}
-
-int 	add_user(char *user, FILE *fp)
-{
-	char		*pass;
-	t_store		*result;
-	pass = malloc(15);
-	printf("add_user begin\n");
+	ft_strclr(user);
+	scanf("%s", user);
 	if (access(user, F_OK) == 0)
 	{
-	//	result = read_file();
+		ft_putstr("user already exists please try a different one\n");
+		add_user(user, fp, pass);
+		sleep(1);
+		system("clear");
+	}
+	fclose(fp);
+	password(user, pass);
+}
+
+int 	check_user(char *user, FILE *fp)
+{
+	char		pass[16];
+	t_store		*result;
+	int			size;
+
+	printf("at add user\n");
+	fp = fopen (user, "a+");
+	fseek(fp, 0, SEEK_END);
+	size = ftell(fp);
+	if (size > 0)
+	{
 		printf("start read_file of pass in FP\n");
-		result = read_file(fp, user, pass, 1);
+		result = read_file(fp, user);
 		ft_putstr("type your password\n");
 		scanf("%s", pass);
 		while (ft_strcmp(pass, result->str) != 0)
@@ -50,13 +55,10 @@ int 	add_user(char *user, FILE *fp)
 	}
 	else
 	{
+		remove(user);
 		system("clear");
 		ft_putstr("User not found \nPlease create one\n");
-		ft_strclr(user);
-		scanf("%s", user);
-		fp = fopen(user, "w+");
-		fclose(fp);
-		password(user, pass);
+		add_user(user, fp, pass);
 		fputs(user, fp);
 	}
 	sleep(1);

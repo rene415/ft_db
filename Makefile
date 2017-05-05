@@ -17,12 +17,13 @@ CC		=	gcc
 FLAG	=	-Wall -Wextra -Werror
 
 SRCS	= 	main.c\
-			add_user.c\
+			check_user.c\
 			user_len_chk.c\
 			remove_user.c\
 			edit_user.c\
 			rot_13.c\
 			read_file.c\
+			check_pass.c\
 
 OBJ =		${SRCS:.c=.o}
 

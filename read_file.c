@@ -22,6 +22,7 @@ void	print_struct(t_store *x)	//prints read_file results FOR TESTING
 	printf("finished printing all read_file results\n");
 }
 
+/*
 t_store		*read_file(FILE *fp, char *user, char *pass, int n)
 {
 	t_store		*head;
@@ -34,7 +35,9 @@ t_store		*read_file(FILE *fp, char *user, char *pass, int n)
 	save->next = NULL;
 	fp = fopen(user, "r");
 	printf("read_file start fread\n");
-	fread(buff, ft_strlen(pass) + 1, n, fp);
+	//printf("the name of the file is %s\n", user);
+	fread(buff, ft_strlen(pass), n, fp);
+	printf("pass %s len = %zu\n", pass, ft_strlen(pass));
 	printf("buff = %s\n", buff);
 	printf("read_file end fread\n");
 	save->str = ft_strdup(buff);
@@ -42,6 +45,7 @@ t_store		*read_file(FILE *fp, char *user, char *pass, int n)
 	fclose(fp);
 	return (head);
 }
+*/
 
 void	free_read(t_store *x)	//frees result elements of read_file
 {
@@ -56,35 +60,35 @@ void	free_read(t_store *x)	//frees result elements of read_file
 	}
 }
 
-/*
-t_store		*read_file(void)			//char *user)
+
+t_store		*read_file(FILE *fp, char *user)			//char *user)
 {
 	char		*line;
 	t_store		*save;
 	t_store		*head;
-	int			fd;
 
-	if (!(save = (t_store*)malloc(sizeof(t_store))))
+	head = NULL;
+
+	printf("Start of read\n");
+	if (!(head = (t_store*)malloc(sizeof(t_store))))
 		return (0);
-	head = save;
+	save = head;
 	save->next = NULL;
-	printf("read_file open user\n");
-	fd = 0;								//fopen(fp, O_RDONLY);
-	printf("success start GNL");
-	while (get_next_line(fd, &line) == 1)
+	printf("read_file open user, %s\n", user);
+	// printf("success start GNL\n");
+	save->str = NULL;
+	while (get_next_line(fileno(fp), &line) == 1)
+	while (get_next_line(fileno(fp), &line))
 	{
-		if (save == NULL)
-		{
-			if (!(save = (t_store*)malloc(sizeof(t_store))))
-				return (NULL);
-			save->next = NULL;
-		}
-		if (ft_strcmp(save->str, line) != 0)	//to make sure its not overwritten
-			save->str = ft_strdup(line);
-		free(line);
-		save = save->next;
+		printf("%s\n", line);
+	
+		//to make sure its not overwritten
+		//save->str = ft_strdup(line);
+		//free(line);
+		//if (!(save->next = (t_store*)malloc(sizeof(t_store))))
+		//	return (NULL);
+		//save = save->next;
 	}
-	close(fd);
+	//save->next = NULL;
 	return (head);
 }
-*/

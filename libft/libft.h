@@ -76,7 +76,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-
+int					get_next_line(const int fd, char **line);
 size_t				ft_letters(char const *s, char c);
 size_t				ft_int_len(int n);
 size_t				ft_word_count(const char *s, char c);

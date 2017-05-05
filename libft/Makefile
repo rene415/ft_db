@@ -34,7 +34,7 @@ SRC = ./ft_atoi.c ./ft_bzero.c ./ft_isalnum.c ./ft_isascii.c ./ft_isdigit.c\
 
 OS = $(SRC:.c=.o) 
 
-INCLD = libft.h get_next_line.h
+INCLD = libft.h
 
 all: $(NAME)
 

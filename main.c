@@ -23,16 +23,15 @@ int		main(void)
 
 	fp = NULL;
 	ft_bzero(choice, ft_strlen(choice));
+	ft_bzero(user, ft_strlen(user));
 	ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
 	scanf("%c", choice);
 	if (choice[0] == '1')
 	{
 		system("clear");
 		ft_putstr("Please enter your user login\n");
-		printf("start scan\n");
 		scanf("%s", user);
-		printf("start add_user\n");
-		add_user(user, fp);
+		check_user(user, fp);
 	}
 	else if (choice[0] == '2')
 		printf("there is no help.\n");
@@ -40,7 +39,6 @@ int		main(void)
 		fclose(fp);
 	else
 		printf("Please enter a valid selection\n");
-	printf("main success almost close\n");
 	fclose(fp);
 	return (0);
 }

@@ -14,9 +14,9 @@
 
 int		user_len_chk(char *str)
 {
-	if (ft_strlen(str) > 10)
+	if (ft_strlen(str) > 15)
 		return (0);
-	else if (ft_strlen(str) == 0)
+	else if (ft_strlen(str) <= 7)
 		return (0);
 	else
 		return (1);
