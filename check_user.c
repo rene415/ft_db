@@ -25,7 +25,6 @@ void	add_user(char *user, FILE *fp, char *pass)
 	}
 	fclose(fp);
 	password(user, pass);
-	ft_putstr("User created\n");
 }
 
 void	valid_usr(char *user, char *pass)
@@ -36,7 +35,7 @@ void	valid_usr(char *user, char *pass)
 	usrFile = fopen (user, "r");
 	printf("User Found. Please enter your password.\n");
 	get_next_line(fileno(usrFile), &hiddenpsw);
-	printf("hey = %s\n", hiddenpsw);
+	printf("your hiddenpsw = %s\n", hiddenpsw);
 	ft_putstr("type your password\n");
 	scanf("%s", pass);
 	while (ft_strcmp(pass, hiddenpsw) != 0)

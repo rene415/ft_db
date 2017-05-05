@@ -23,8 +23,7 @@ int		edit_data(char *choice, FILE *fp, char *user)
 	num2 = 0;
 	sleep(1);
 	system("clear");
-	//printf("Welcome:\n     %s\n", user);
-	ft_putstr("Welcome:\n");
+	ft_putstr("Welcome:\n    ");
 	ft_putstr(user);
 	ft_putstr("\n_________________\n");
 	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
@@ -52,13 +51,18 @@ int		edit_data(char *choice, FILE *fp, char *user)
 		}
 	}
 	else if (num == 2)
-		printf("there is no help.\n");
+	{
+
+	}
 	else if (num == 3)
 	{
-		fclose(fp);
-		system("clear");
-		printf("Session ended\n");
-		return (0);
+		if ((remove_user()) == 1)
+			ft_putstr("remove was successful\n");
+		else
+		{
+			ft_putstr("remove was not successful\n");
+			edit_data(choice, fp, user);
+		}
 	}
 	fclose(fp);		//to be removed (not sure)
 	return (1);

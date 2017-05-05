@@ -12,7 +12,7 @@
 
 #include "ft_db.h"
 
-void		free_store(t_store *store)
+static void		free_store(t_store *store)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ void		free_store(t_store *store)
 	}
 }
 
-void		print_store(t_store *store)
+static void		print_store(t_store *store)
 {
 	int		i;
 
@@ -45,7 +45,7 @@ void		print_store(t_store *store)
 	}
 }
 
-t_store		*ft_db(int row, int col)
+t_store		*create_store(int row, int col)
 {
 	int			i;
 	int			total;
@@ -72,13 +72,13 @@ t_store		*ft_db(int row, int col)
 	return (head);
 }
 
-int		main(void)
-{
-	int		x = 5;
-	int		y = 5;
-	t_store	*hey;
-	hey = ft_db(x, y);
-	print_store(hey);
-	free_store(hey);
-	return (0);
-}
+// int		main(void)
+// {
+// 	int		x = 5;
+// 	int		y = 5;
+// 	t_store	*hey;
+// 	hey = ft_db(x, y);
+// 	print_store(hey);
+// 	free_store(hey);
+// 	return (0);
+// }

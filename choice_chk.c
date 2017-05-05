@@ -14,6 +14,8 @@
 
 int		choice_chk(char *c, char *user, FILE *fp)
 {
+	
+	system("clear");
 	while (*c != '1' && *c != '2' && *c != '3')
 	{
 		system("clear");
@@ -35,6 +37,6 @@ int		choice_chk(char *c, char *user, FILE *fp)
 		printf("Session ended\n");
 		return (0);
 	}
-	fclose(fp);		//to be removed (not sure)
+	fclose(fp);		//to be removed (not)
 	return (1);
 }

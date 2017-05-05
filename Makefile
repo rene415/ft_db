@@ -25,6 +25,7 @@ SRCS	= 	main.c\
 			check_pass.c\
 			choice_chk.c\
 			edit_data.c\
+			create_store.c\
 
 OBJ =		${SRCS:.c=.o}
 
