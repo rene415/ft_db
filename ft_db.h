@@ -30,6 +30,6 @@ int		user_len_chk(char *str);
 int		add_user(char *user, FILE *fp);
 int		edit_user(char *user, FILE *fp);
 int		remove_user(char *user, FILE *fp);
-char		rot_13(char *str);
+char	*rot_13(char *str);
 
 #endif

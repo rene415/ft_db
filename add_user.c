@@ -15,24 +15,26 @@
 void	password(char *user, char *pass)
 {
 	FILE *uf;
-	uf = fopen(user, "w");
+
+	uf = fopen(user, "w+");
 	ft_putstr("type a password\n");
 	scanf("%s", pass);
-	*pass = rot_13(pass);
+	system("clear");
 	fputs(pass, uf);
+	ft_putstr("User created\n");
 	fclose(uf);
-	ft_putstr("\n");
 }
 
 int 	add_user(char *user, FILE *fp)
 {
-	char pass[15];
+	char *pass;
 
+	pass = malloc(15);
 	if (access(user, F_OK) == 0)
 	{
 		ft_putstr("type your password\n");
 		scanf("%s", pass);
-		while (ft_strcmp(pass, "password") != 0)
+		while (ft_strcmp(pass, ) != 0)
 		{
 			ft_putstr("Password does not match\n");
 			ft_strclr(pass);
@@ -53,6 +55,8 @@ int 	add_user(char *user, FILE *fp)
 		password(user, pass);
 		fputs(user, fp);
 	}
+	sleep(1);
+	system("clear");
 	printf("Welcome:\n     %s\n", user);
 	ft_putstr("_________________\n");
 	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");

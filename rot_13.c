@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-char	rot_13(char *str)
+char	*rot_13(char *str)
 {
 	int i;
 
@@ -35,5 +35,5 @@ char	rot_13(char *str)
 		else	
 			ft_putchar(str[i++]);
 	}
-	return (*str);
+	return (str);
 }
