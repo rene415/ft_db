@@ -6,7 +6,7 @@
 /*   By: rramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 03:25:34 by rramirez          #+#    #+#             */
-/*   Updated: 2017/05/04 17:56:30 by wfung            ###   ########.fr       */
+/*   Updated: 2017/05/04 19:09:42 by rramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,9 @@ int		add_user(char *user, FILE *fp);
 int		edit_user(char *user, FILE *fp);
 int		remove_user(char *user, FILE *fp);
 char	*rot_13(char *str);
+
+t_store	*read_file(FILE *fp, char *user, char *pass, int n);
+void	print_struct(t_store *x);
+void	free_read(t_store *x);
 
 #endif

@@ -29,7 +29,9 @@ int		main(void)
 	{
 		system("clear");
 		ft_putstr("Please enter your user login\n");
+		printf("start scan\n");
 		scanf("%s", user);
+		printf("start add_user\n");
 		add_user(user, fp);
 	}
 	else if (choice[0] == '2')
@@ -38,6 +40,7 @@ int		main(void)
 		fclose(fp);
 	else
 		printf("Please enter a valid selection\n");
+	printf("main success almost close\n");
 	fclose(fp);
 	return (0);
 }
