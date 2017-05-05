@@ -27,12 +27,31 @@ void	add_user(char *user, FILE *fp, char *pass)
 	password(user, pass);
 }
 
+void	valid_usr(char *user, char *pass)
+{
+	char	*hey;
+	FILE 	*usrFile;
+	
+	usrFile = fopen (user, "r");
+	printf("User Found. Please enter your password.\n");
+	get_next_line(fileno(usrFile), &hey);
+	printf("hey = %s\n", hey);
+	ft_putstr("type your password\n");
+	scanf("%s", pass);
+	while (ft_strcmp(pass, hey) != 0)
+	{
+		ft_putstr("Password does not match\n");
+		ft_strclr(pass);
+		scanf("%s", pass);
+	}
+	system("clear");
+	ft_putstr("Login Success\n");
+}
+
 int 	check_user(char *user, FILE *fp)
 {
 	char		pass[16];
-	//t_store		*result;
 	int			size;
-	char		*hey;
 
 	printf("at add user\n");
 	fp = fopen (user, "a+");
@@ -41,22 +60,7 @@ int 	check_user(char *user, FILE *fp)
 	fclose(fp);
 	if (size > 0)
 	{
-		fp = fopen (user, "r");
-		printf("User Found. Please enter your password.\n");
-//		result = read_file(fp, user);
-		get_next_line(fileno(fp), &hey);
-		printf("hey = %s\n", hey);
-		ft_putstr("type your password\n");
-		scanf("%s", pass);
-		while (ft_strcmp(pass, hey) != 0)
-		{
-			ft_putstr("Password does not match\n");
-			ft_strclr(pass);
-			scanf("%s", pass);
-		}
-		system("clear");
-		ft_putstr("Login Success\n");
-
+		valid_usr(user, pass);
 	}
 	else
 	{

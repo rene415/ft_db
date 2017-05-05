@@ -35,9 +35,10 @@ char		*rot_13(char *str);
 t_store		*read_file(FILE *fp, char *user);
 void		print_struct(t_store *x);
 void		free_read(t_store *x);
+void		valid_usr(char *user, char *pass);
 void		password(char *user, char *pass);
 int			pass_check(char *pass);
 int			pass_check2(char *pass, size_t i, int digitFlag, int upperFlag, int lowerFlag);
-void	if_statements(int digitFlag, int upperFlag ,int lowerFlag);
+void		if_statements(int digitFlag, int upperFlag ,int lowerFlag);
 
 #endif

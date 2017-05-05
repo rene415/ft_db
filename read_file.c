@@ -22,31 +22,6 @@ void	print_struct(t_store *x)	//prints read_file results FOR TESTING
 	printf("finished printing all read_file results\n");
 }
 
-/*
-t_store		*read_file(FILE *fp, char *user, char *pass, int n)
-{
-	t_store		*head;
-	t_store		*save;
-	char		buff[10];
-
-	if (!(save = (t_store*)malloc(sizeof(t_store))))
-		return (0);
-	head = save;
-	save->next = NULL;
-	fp = fopen(user, "r");
-	printf("read_file start fread\n");
-	//printf("the name of the file is %s\n", user);
-	fread(buff, ft_strlen(pass), n, fp);
-	printf("pass %s len = %zu\n", pass, ft_strlen(pass));
-	printf("buff = %s\n", buff);
-	printf("read_file end fread\n");
-	save->str = ft_strdup(buff);
-	printf("read_file success\n");
-	fclose(fp);
-	return (head);
-}
-*/
-
 void	free_read(t_store *x)	//frees result elements of read_file
 {
 	t_store	*curr;
