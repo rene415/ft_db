@@ -12,7 +12,7 @@
 
 #include "ft_db.h"
 
-static void		free_store(t_store *store)
+void		free_store(t_store *store)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ static void		free_store(t_store *store)
 	}
 }
 
-static void		print_store(t_store *store)
+void		print_store(t_store *store, int max)
 {
 	int		i;
 
@@ -39,10 +39,18 @@ static void		print_store(t_store *store)
 	current = store;
 	while (current->next)
 	{
-		printf("//store [%i] [%i]\n", i, current->x);
+	//	printf("//store [%i] [%i]\n", i, current->x);
+		printf("[%i]", current->x);
+		if (i == max - 1)
+		{
+			printf("\n");
+			i = -1;
+		}
 		current = current->next;
+		i++;
 	//	printf("/store [%i] [%i]\n", i, store->x);
 	}
+	printf("\n");
 }
 
 t_store		*create_store(int row, int col)
@@ -53,7 +61,7 @@ t_store		*create_store(int row, int col)
 	t_store		*head;
 
 	i = 0;
-	total = row * col + 1;
+	total = row * col;
 	if (!(store = (t_store*)malloc(sizeof(t_store) * (1))))
 		return (NULL);
 	store->next = NULL;
@@ -63,12 +71,14 @@ t_store		*create_store(int row, int col)
 		if (!(store->next = (t_store*)malloc(sizeof(t_store) * (1))))
 			return (NULL);
 		store->x = i;
-		printf("store->x i %i [%i]\n", i, store->x);
+	//	printf("store->x i %i [%i]\n", i, store->x);
 	//	printf("db i = [%i]\n", i);
 		i++;
 		store = store->next;
 	}
 	store->next = NULL;
+	head->row = row;
+	head->col = col;
 	return (head);
 }
 

@@ -31,9 +31,10 @@ int		main(void)
 	{
 		if (edit_data(choice, fp, user) == 1)
 		{
-
+			printf("edit data fin\n");
 		}
 		
 	}
+	printf("main over\n");
 	return (0);
 }

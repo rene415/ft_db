@@ -17,6 +17,7 @@ int		edit_data(char *choice, FILE *fp, char *user)
 	int		i;
 	int		num;
 	int		num2;
+	t_store	*buff;
 
 	i = 0;
 	num = 0;
@@ -34,14 +35,26 @@ int		edit_data(char *choice, FILE *fp, char *user)
 		system("clear");
 		ft_putstr("Invalid Entry. Please Select One");
 		ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
+		scanf("%d", &num);
 	}
 	if (num == 1)
 	{
-		ft_putstr("Add Data\nPlease enter the number of Columns\n");
+		ft_putstr("Add Data\nPlease enter the number of Columns [Limit 10]\n");
 		scanf("%d", &num);
-		ft_putstr("Please enter the number of Rows\n");
+		while (num > 10 || num < 1)
+		{
+			ft_putstr("Invalid Entry\nPlease enter the number of Columns [Limit 10]\n");
+			scanf("%d", &num);
+		}
+		ft_putstr("Add Data\nPlease enter the number of Rows [Limit 10]\n");
 		scanf("%d", &num2);
-		while (i < num)
+		while (num2 > 10 || num2 < 1)
+		{
+			ft_putstr("Invalid Entry. Please enter the number of Rows\n [Limit 10]\n");
+			scanf("%d", &num2);
+		}
+		buff = create_store(num, num2);
+/*		while (i < num)
 		{
 			ft_putstr("Please enter Info for Column");
 			ft_putnbr(i);
@@ -49,20 +62,22 @@ int		edit_data(char *choice, FILE *fp, char *user)
 			scanf("%s", choice);
 			i++;
 		}
+*/	print_store(buff, buff->col);
 	}
 	else if (num == 2)
 	{
-
+		printf("put edit data stuff here\n");
 	}
 	else if (num == 3)
 	{
-		if ((remove_user()) == 1)
+	/*	if ((remove_user()) == 1)
 			ft_putstr("remove was successful\n");
 		else
 		{
 			ft_putstr("remove was not successful\n");
 			edit_data(choice, fp, user);
 		}
+*/	printf("put remove data stuff here\n");
 	}
 	fclose(fp);		//to be removed (not sure)
 	return (1);

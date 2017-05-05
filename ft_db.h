@@ -47,8 +47,8 @@ int 		choice_chk(char *c, char *user, FILE *fp);
 int 		edit_data(char *choice, FILE *fp, char *user);
 t_store 	*create_store(int row, int col);
 
-static void		print_store(t_store *store);
-static void		free_store(t_store *store);
+void		print_store(t_store *store, int col);
+void		free_store(t_store *store);
 
 
 #endif
