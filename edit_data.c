@@ -44,7 +44,9 @@ int		edit_user(char *choice, FILE *fp, char *user)
 	}
 	if (*choice == '1')
 	{
+
 		add_data(row, col);
+		fp = fopen(user, "a+");
 /*		while (i < num)
 		{
 			ft_putstr("Please enter Info for Column");
@@ -54,7 +56,10 @@ int		edit_user(char *choice, FILE *fp, char *user)
 			i++;
 		}
 		print_store(buff, buff->col);
+
 */
+	fputs((buff->str), user);
+	fclose(fp);
 	}
 	else if (*choice == 2)
 	{
@@ -64,8 +69,9 @@ int		edit_user(char *choice, FILE *fp, char *user)
 	{
 		remove_data(row, col, buff);
 		ft_putstr("remove was successful\n");
-		edit_user(choice, fp, user);
 	}
+	edit_user(choice, fp, user);
+	//free(everything!!!)
 	fclose(fp);		//to be removed (not sure)
 	return (1);
 }
