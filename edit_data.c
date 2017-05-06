@@ -11,6 +11,15 @@
 /* ************************************************************************** */
 
 #include "ft_db.h"
+void		intro(char *user)
+{
+	sleep(1);
+	system("clear");
+	ft_putstr("Welcome:\n    ");
+	ft_putstr(user);
+	ft_putstr("\n_________________\n");
+	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
+}
 
 int		edit_user(char *choice, FILE *fp, char *user)
 {
@@ -22,22 +31,17 @@ int		edit_user(char *choice, FILE *fp, char *user)
 	i = 0;
 	col = 0;
 	row = 0;
-	sleep(1);
-	system("clear");
-	ft_putstr("Welcome:\n    ");
-	ft_putstr(user);
-	ft_putstr("\n_________________\n");
-	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
+	intro(user);
 	ft_strclr(choice);
-	scanf("%d", choice);
-	while (choice != 1 && choice != 2 && choice != 3)
+	scanf("%s", choice);
+	while (choice != '1' && choice != '2' && choice != '3')
 	{
 		system("clear");
 		ft_putstr("Invalid Entry. Please Select One");
 		ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
-		scanf("%d", choice);
+		scanf("%s", choice);
 	}
-	if (choice == 1)
+	if (choice == '1')
 	{
 		add_data(row, col);
 /*		while (i < num)
@@ -48,7 +52,8 @@ int		edit_user(char *choice, FILE *fp, char *user)
 			scanf("%s", choice);
 			i++;
 		}
-*/	print_store(buff, buff->col);
+		print_store(buff, buff->col);
+*/
 	}
 	else if (num == 2)
 	{

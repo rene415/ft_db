@@ -33,7 +33,7 @@ typedef	struct		s_store
 int			user_len_chk(char *str);
 int			check_user(char *user, FILE *fp);
 int			edit_user(char *choice, FILE *fp, char *user);
-int			remove_user(char *user, FILE *fp);
+void		remove_data(int row, int col, t_store *store);
 
 //char		*rot_13(char *str);
 //t_store		*read_file(FILE *fp, char *user);

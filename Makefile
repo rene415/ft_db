@@ -19,7 +19,8 @@ FLAG	=	-Wall -Wextra -Werror
 SRCS	= 	main.c\
 			check_user.c\
 			user_len_chk.c\
-			remove_user.c\
+			remove_data.c\
+			add_data.c\
 			rot_13.c\
 			read_file.c\
 			check_pass.c\
