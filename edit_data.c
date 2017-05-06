@@ -39,21 +39,7 @@ int		edit_user(char *choice, FILE *fp, char *user)
 	}
 	if (choice == 1)
 	{
-		ft_putstr("Add Data\nPlease enter the number of Columns [Limit 10]\n");
-		scanf("%d", &col);
-		while (col > 10 || col < 1)
-		{
-			ft_putstr("Invalid Entry\nPlease enter the number of Columns [Limit 10]\n");
-			scanf("%d", &col);
-		}
-		ft_putstr("Add Data\nPlease enter the number of Rows [Limit 10]\n");
-		scanf("%d", &row);
-		while (row > 10 || row < 1)
-		{
-			ft_putstr("Invalid Entry. Please enter the number of Rows\n [Limit 10]\n");
-			scanf("%d", &row);
-		}
-		buff = create_store(row, col);
+		add_data(row, col);
 /*		while (i < num)
 		{
 			ft_putstr("Please enter Info for Column");
