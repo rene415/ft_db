@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/05 17:02:56 by wfung             #+#    #+#             */
-/*   Updated: 2017/05/05 17:37:10 by wfung            ###   ########.fr       */
+/*   Updated: 2017/05/05 17:48:46 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	remove_data(int row, int col, t_store *store)
 				{
 					free(store->str);
 					store->str = NULL;
-					free(store->x);
-					store->x = NULL;
+					store->x = 0;
 				}
 			}
 			x = 0;
