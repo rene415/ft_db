@@ -37,23 +37,23 @@ int		edit_user(char *choice, FILE *fp, char *user)
 		ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
 		scanf("%d", choice);
 	}
-	if (num == 1)
+	if (choice == 1)
 	{
 		ft_putstr("Add Data\nPlease enter the number of Columns [Limit 10]\n");
-		scanf("%d", &num);
-		while (num > 10 || num < 1)
+		scanf("%d", &col);
+		while (col > 10 || col < 1)
 		{
 			ft_putstr("Invalid Entry\nPlease enter the number of Columns [Limit 10]\n");
-			scanf("%d", &num);
+			scanf("%d", &col);
 		}
 		ft_putstr("Add Data\nPlease enter the number of Rows [Limit 10]\n");
-		scanf("%d", &num2);
-		while (num2 > 10 || num2 < 1)
+		scanf("%d", &row);
+		while (row > 10 || row < 1)
 		{
 			ft_putstr("Invalid Entry. Please enter the number of Rows\n [Limit 10]\n");
-			scanf("%d", &num2);
+			scanf("%d", &row);
 		}
-		buff = create_store(num, num2);
+		buff = create_store(row, col);
 /*		while (i < num)
 		{
 			ft_putstr("Please enter Info for Column");
