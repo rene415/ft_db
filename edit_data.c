@@ -12,16 +12,16 @@
 
 #include "ft_db.h"
 
-int		edit_data(char *choice, FILE *fp, char *user)
+int		edit_user(char *choice, FILE *fp, char *user)
 {
 	int		i;
-	int		num;
-	int		num2;
+	int		col;
+	int		row;
 	t_store	*buff;
 
 	i = 0;
-	num = 0;
-	num2 = 0;
+	col = 0;
+	row = 0;
 	sleep(1);
 	system("clear");
 	ft_putstr("Welcome:\n    ");
@@ -29,13 +29,13 @@ int		edit_data(char *choice, FILE *fp, char *user)
 	ft_putstr("\n_________________\n");
 	ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
 	ft_strclr(choice);
-	scanf("%d", &num);
-	while (num != 1 && num != 2 && num != 3)
+	scanf("%d", choice);
+	while (choice != 1 && choice != 2 && choice != 3)
 	{
 		system("clear");
 		ft_putstr("Invalid Entry. Please Select One");
 		ft_putstr("[1] Add Data\n[2] Edit Data\n[3] Remove Data\n");
-		scanf("%d", &num);
+		scanf("%d", choice);
 	}
 	if (num == 1)
 	{

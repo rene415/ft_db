@@ -29,7 +29,7 @@ int		main(void)
 	scanf("%c", choice);
 	if (choice_chk(&choice[0], user, fp) == 1)
 	{
-		if (edit_data(choice, fp, user) == 1)
+		if (edit_user(choice, fp, user) == 1)
 		{
 			printf("edit data fin\n");
 		}

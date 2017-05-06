@@ -81,14 +81,3 @@ t_store		*create_store(int row, int col)
 	head->col = col;
 	return (head);
 }
-
-// int		main(void)
-// {
-// 	int		x = 5;
-// 	int		y = 5;
-// 	t_store	*hey;
-// 	hey = ft_db(x, y);
-// 	print_store(hey);
-// 	free_store(hey);
-// 	return (0);
-// }

@@ -53,7 +53,6 @@ int 	check_user(char *user, FILE *fp)
 	char		pass[16];
 	int			size;
 
-	printf("at add user\n");
 	fp = fopen (user, "a+");
 	fseek(fp, 0, SEEK_END);
 	size = ftell(fp);

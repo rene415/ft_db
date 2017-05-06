@@ -32,23 +32,25 @@ typedef	struct		s_store
 
 int			user_len_chk(char *str);
 int			check_user(char *user, FILE *fp);
-int			edit_user(char *user, FILE *fp);
+int			edit_user(char *choice, FILE *fp, char *user);
 int			remove_user(char *user, FILE *fp);
-char		*rot_13(char *str);
-t_store		*read_file(FILE *fp, char *user);
+
+//char		*rot_13(char *str);
+//t_store		*read_file(FILE *fp, char *user);
+
 void		print_struct(t_store *x);
 void		free_read(t_store *x);
 void		valid_usr(char *user, char *pass);
+
 void		password(char *user, char *pass);
 int			pass_check(char *pass);
 int			pass_check2(char *pass, size_t i, int digitFlag, int upperFlag, int lowerFlag);
 void		if_statements(int digitFlag, int upperFlag ,int lowerFlag);
+
 int 		choice_chk(char *c, char *user, FILE *fp);
-int 		edit_data(char *choice, FILE *fp, char *user);
 t_store 	*create_store(int row, int col);
 
 void		print_store(t_store *store, int col);
 void		free_store(t_store *store);
-
 
 #endif
