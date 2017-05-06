@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/05 17:02:56 by wfung             #+#    #+#             */
-/*   Updated: 2017/05/05 17:59:52 by wfung            ###   ########.fr       */
+/*   Updated: 2017/05/05 18:06:54 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	remove_msg(int row, int col, t_store *store)
 	int		y;
 
 	x = 0;
+	y = 0;
 	if (store == NULL)
 		ft_putstr("Database does no exist\n");
 	while (store->next)
@@ -47,7 +48,7 @@ void		remove_data(int row, int col, t_store *store)
 
 	x = 0;
 	y = 0;
-	remove_msg(store);
+	remove_msg(row, col, store);
 	while (store->next)
 	{
 		if (x == col - 1)
