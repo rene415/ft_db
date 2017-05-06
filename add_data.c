@@ -31,5 +31,6 @@ t_store		*add_data(int row, int col)
 		scanf("%d", &row);
 	}
 	buff = create_store(row, col);
+
 	return (0);
 }
