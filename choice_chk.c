@@ -20,7 +20,7 @@ int		choice_chk(char *c, char *user, FILE *fp)
 	{
 		system("clear");
 		ft_putstr("Invalid Entry. Please Select One");
-		ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
+		ft_putstr("Database Loaded\n[1] Login\n[2] Exit\n");
 	}
 	if (*c == '1')
 	{
@@ -29,8 +29,6 @@ int		choice_chk(char *c, char *user, FILE *fp)
 		check_user(user, fp);
 	}
 	else if (*c == '2')
-		printf("there is no help.\n");
-	else if (*c == '3')
 	{
 		fclose(fp);
 		system("clear");

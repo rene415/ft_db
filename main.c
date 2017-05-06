@@ -17,7 +17,7 @@
 
 int		main(void)
 {
-	char	choice[3];
+	char	choice[2];
 	char	user[60];
 	FILE	*fp;
 
@@ -25,15 +25,15 @@ int		main(void)
 	ft_bzero(choice, ft_strlen(choice));
 	ft_bzero(user, ft_strlen(user));
 	system("clear");
-	ft_putstr("Database Loaded\n[1] Login\n[2] Help\n[3] Exit\n");
+	ft_putstr("Database Loaded\n[1] Login\n[2] Exit\n");
 	scanf("%c", choice);
 	if (choice_chk(&choice[0], user, fp) == 1)
 	{
-		if (edit_user(choice, fp, user) == 1)
+		if (choice[0] == '1')
 		{
-			printf("edit data fin\n");
+			if (edit_user(choice, fp, user) == 1)
+				printf("edit data fin\n");
 		}
-		
 	}
 	printf("main over\n");
 	return (0);
