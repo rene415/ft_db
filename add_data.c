@@ -12,7 +12,7 @@
 
 #include "ft_db.h"
 
-t_store		*add_data(int row, int col )
+t_store		*add_data(int row, int col)
 {
 	t_store 	*buff;
 
